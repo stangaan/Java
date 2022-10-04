@@ -1,0 +1,35 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Neu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String two = scanner.nextLine();
+        two = two.toLowerCase(Locale.GERMAN);//переводит все символы в маленьткие буквы
+        // вдругой регистер//
+        System.out.println(two);//änj от выводит уже в другом регистре?//
+
+        two = "F" +two;
+        int size = two.length() -1;// это считает сколько символов в строке//
+                two = two + size;
+
+        //переменная замены букв в одних ковычках '_'?//
+        two = two.replace('z','p');
+
+        //замена строки или слова происходит если мы в "" слово вписываем//
+        two = two.replace("number", "Nummer");
+        System.out.println(two);
+
+        //Находит последний символ строки//
+        char last = two.charAt(3);//Находит последний или 3 если мы указываем это конкретно в () символ строки//
+        System.out.println(last);//в () указываем что нужно выписать в консоль этот символ char last//
+
+        // как найти цетральную часть чиго либо//
+        int wort = two.length();
+        char center = two.charAt(wort/2);
+        System.out.print(center);
+
+        // Ставим то что мы нашли в цетре в конец//
+        System.out.println(two + center);
+
+// Zero es a number//
