@@ -4,29 +4,39 @@ import static java.lang.Thread.sleep;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        //Вывести все числа от 0 до 10000, которые заканчиваются на 7
-        int a =1;
-        while  (a <=100) {
+        //
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ввидите пожалуйста после знака = ваш ответ");
+        int number= 1;
+        int points = 5; //пункты за правильный ответ//
+        while (number <= 100) {
             sleep(2000);
-        int b = a*5;
-            System.out.print( a + "*" + "5 = ");
-            Scanner scanner = new Scanner(System.in);
-                    int c = scanner.nextInt();
-                    if (c == b) {
-                System.out.println("Правильно");
+            int levels = number * 5; //ввидите математический знак + - * / и любое число с которым вы хотите тренироваться//
+            System.out.print(number + " * 5 = ");//измените значения со знаком и числом//
+            int c = scanner.nextInt();
+            if (c == levels) {
+                System.out.print("Правильно вы получаете!-");
+                while (points <= 100) {
+                    sleep(2000);
+
+                    System.out.println(points + 1+ " пунктов");
+                    sleep(1000);
+                    break;
+                }
+
+                System.out.println("Вы гений!");
+                points++;
+
+            } else {
+                System.out.print("К сожелению это не правильно. Правельный ответ = ");
+                sleep(2000);
+                System.out.println(levels);
 
             }
-                    else {
-                System.out.println("Не правильно");
-            }
-            sleep(5000);
-            System.out.println(b);
-            a++ ;
+            number++;
+
         }
 
-
-       // int a = 0;
-        //while (a < 10000) //
 
     }
 
