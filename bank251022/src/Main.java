@@ -6,8 +6,8 @@ public class Main {
         Scanner scanner =new Scanner(System.in);
         int number = scanner.nextInt();
         int i;
-    for (i=0; i<number; i++){
-        System.out.println(i+1);
+    for (i=0; i+1<=number; i++){
+        System.out.print(i);
 
         }
     }
