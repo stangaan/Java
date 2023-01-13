@@ -2,8 +2,12 @@ package HausworksJava;
 
 public class Main {
     public static void main(String[] args) {
-        Pension pensionPiple = new Pension(0.02, "Stars", true, 1945);
-        pensionPiple.pensionСalculation(20,1000,1500);
-        System.out.println(pensionPiple);
+        Pension pensionPeople = new Pension( "People", true, 1945);
+        Pension pensionState = new Pension( "State", false, 1998);
+
+        double statePension = pensionPeople.pensionСalculation(40,1000.0,2500.0);
+        double notStatePension = pensionState.pensionСalculation(40,1000.0,2500.0);
+        System.out.println(statePension);
+        System.out.println(notStatePension);
     }
 }

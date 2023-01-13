@@ -1,30 +1,39 @@
 package HausworksJava;
 
-public class Pension {
+public class Pension extends Main {
 
-    double pensionCoefficient;
-
-    String namePension;
-
-    boolean statesPension;
+    private static final double PENSION_COEFFICIENT = 0.02;
+    private static final int AVERAGE_SALARY = 1500;
 
 
-    public int getDateCreate() {
-        return dateCreate;
-    }
+    private String namePensionFond;
+
+    private boolean isState;
 
     private int dateCreate;
 
-    public Pension(double pensionCoefficient, String namePension, boolean statesPension, int dateCreate) {
-        this.pensionCoefficient = pensionCoefficient;
-        this.namePension = namePension;
-        this.statesPension = statesPension;
+    public Pension( String namePensionFond, boolean isState, int dateCreate) {
+        this.namePensionFond = namePensionFond;
+        this.isState = isState;
         this.dateCreate = dateCreate;
     }
 
-    public int pensionСalculation(int a, int b, int c){
-        return (b + c) * a;
-    }}
+
+
+
+    public double pensionСalculation(int age, double maxSalary, double minSalary){
+       double averageSalary;
+        if (isState){
+            averageSalary = AveregeCalculationUtil.twoNamber(maxSalary,minSalary);
+        }
+        else {
+            averageSalary = AveregeCalculationUtil.threeNamber(maxSalary, minSalary, AVERAGE_SALARY);
+        }
+        return averageSalary * age * PENSION_COEFFICIENT;
+
+    }
+
+}
 
 
 //

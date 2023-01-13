@@ -1,8 +1,12 @@
 package HausworksJava;
 
-public class Calculation {
-    public int averigePensioncalculation(int a, int b){
-        return (b + a) / 2;
+
+public class Calculation extends Main {
+
+    public int averigePensioncalculation(int minPension, int maxPension){
+        return (minPension + maxPension) / 2;
     }
+
+
 }
 
