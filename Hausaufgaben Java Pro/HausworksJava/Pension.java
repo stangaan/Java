@@ -3,7 +3,7 @@ package HausworksJava;
 public class Pension extends Main {
 
     private static final double PENSION_COEFFICIENT = 0.02;
-    private static final int AVERAGE_SALARY = 1500;
+    private static final int AVERAGE_SALARY = 3000;
 
 
     private String namePensionFond;

@@ -18,7 +18,7 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getYears() {
+    public int getYears(int i) {
         return years;
     }
 

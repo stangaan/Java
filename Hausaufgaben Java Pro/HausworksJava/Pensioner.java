@@ -5,7 +5,7 @@ public class Pensioner extends Person {
     private double pension;
     @Override
     public void die(){
-        double x = (getYears() -50) * pension;
+        double x = (getYears(60) -50) * pension;
 
         System.out.println("Пенсионер умер и он не дожил до " + x);
     }
