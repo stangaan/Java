@@ -2,13 +2,15 @@ package HausworksJava;
 
 public class Main {
     public static void main(String[] args) {
-        Pension pensionPeople = new Pension( "People", true, 1945);
-        Pension pensionState = new Pension( "State", false, 1998);
+        Pension pensionPeople = new Pension( "People", TypeOfFond.NOT_STATE, 1945);
+        Pension pensionState = new Pension( "State",TypeOfFond.STATE, 1998);
+        Pension pensionNot = new Pension("SCAM", TypeOfFond.SCAM, 2023);
 
         double statePension = pensionPeople.pensionСalculation(40,1000.0,2500.0);
         double notStatePension = pensionState.pensionСalculation(40,1000.0,2500.0);
         System.out.println(statePension);
         System.out.println(notStatePension);
+        System.out.println(pensionNot);
         Person person = new Person() {
             @Override
             void die() {

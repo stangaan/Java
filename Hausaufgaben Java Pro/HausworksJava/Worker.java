@@ -26,7 +26,7 @@ public class Worker extends Person implements AbleToCalculatePension {
 
     @Override
     public double calculatePension() {
-    Pension pensionGermany = new Pension( "Germany",true, 1888);
+    Pension pensionGermany = new Pension( "Germany", TypeOfFond.STATE, 1888);
     int years =  getYears(60);
     double result = pensionGermany.pensionСalculation(years, minSalary, maxSalary);
         return result;
