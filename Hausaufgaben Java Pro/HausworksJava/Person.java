@@ -1,6 +1,5 @@
 package HausworksJava;
 
-import java.util.LinkedList;
 import java.util.Objects;
 
 public abstract class Person {
@@ -8,6 +7,7 @@ public abstract class Person {
     private int years;
     private int height;
     private double weight;
+    public int children;
 
     abstract void die();
 
@@ -43,13 +43,11 @@ public abstract class Person {
         this.weight = weight;
     }
 
-    LinkedList<String> children = new LinkedList<>();
-
-    public LinkedList<String> getChildren() {
+    public int getChildren() {
         return children;
     }
 
-    public void setChildren(String children) {
+    public void setChildren(int children) {
         this.children = children;
     }
 
@@ -58,7 +56,7 @@ public abstract class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return years == person.years && height == person.height && Double.compare(person.weight, weight) == 0 && Objects.equals(name, person.name) && children.equals(person.children);
+        return years == person.years && height == person.height && Double.compare(person.weight, weight) == 0 && children == person.children && Objects.equals(name, person.name);
     }
 
     @Override
@@ -76,5 +74,8 @@ public abstract class Person {
                 ", children=" + children +
                 '}';
     }
+
+
+
 }
 

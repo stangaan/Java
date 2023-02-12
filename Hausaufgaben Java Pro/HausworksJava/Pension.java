@@ -6,6 +6,7 @@ public class Pension extends Main {
 
     private static final double PENSION_COEFFICIENT = 0.02;
     private static final int AVERAGE_SALARY = 3000;
+    private static final int CHILDREN = 200;
 
     private int children;
 
@@ -54,15 +55,16 @@ public class Pension extends Main {
     public double pensionСalculation(int age, double maxSalary, double minSalary, int children){
        double averageSalary;
        switch (type){
-           case STATE;
-               averageSalary = AveregeCalculationUtil.averege(maxSalary,minSalary);
+           case STATE:
+               averageSalary = AveregeCalculationUtil.averege(maxSalary, minSalary, children, CHILDREN);
+
+               break;
+           case NOT_STATE:
+               averageSalary = AveregeCalculationUtil.averege(maxSalary, minSalary, AVERAGE_SALARY, children * CHILDREN);
             break;
-           case NOT_STATE;
-               averageSalary = AveregeCalculationUtil.averege(maxSalary, minSalary, AVERAGE_SALARY);
-            break;
-           case SCAM;
+           case SCAM:
                averageSalary = 0;
-               default;
+           default:
                averageSalary = 0;
        }
         return averageSalary * age * PENSION_COEFFICIENT + CHILDREN;
@@ -70,5 +72,6 @@ public class Pension extends Main {
 
 
     }
+
 
 }
