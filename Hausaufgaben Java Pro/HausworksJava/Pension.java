@@ -7,6 +7,15 @@ public class Pension extends Main {
     private static final double PENSION_COEFFICIENT = 0.02;
     private static final int AVERAGE_SALARY = 3000;
 
+    private int children;
+
+    public int getChildren() {
+        return children;
+    }
+
+    public void setChildren(int children) {
+        this.children = children;
+    }
 
     private String namePensionFond;
 
@@ -42,7 +51,7 @@ public class Pension extends Main {
                 '}';
     }
 
-    public double pensionСalculation(int age, double maxSalary, double minSalary){
+    public double pensionСalculation(int age, double maxSalary, double minSalary, int children){
        double averageSalary;
        switch (type){
            case STATE;
@@ -56,7 +65,7 @@ public class Pension extends Main {
                default;
                averageSalary = 0;
        }
-        return averageSalary * age * PENSION_COEFFICIENT;
+        return averageSalary * age * PENSION_COEFFICIENT + CHILDREN;
 
 
 
